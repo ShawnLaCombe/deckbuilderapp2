@@ -5,6 +5,7 @@ class DecksController < ApplicationController
   # GET /decks.json
   def index
     @decks = Deck.all
+    deck_id= Deck.name
   end
 
   # GET /decks/1
@@ -69,6 +70,6 @@ class DecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deck_params
-      params.require(:deck).permit(:name)
+      params.require(:deck).permit(:name, :card_id)
     end
 end
